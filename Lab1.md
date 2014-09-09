@@ -2,7 +2,7 @@
 ####Title:        Writeup for Lab 1 Questions
 ####Team Members: Jessica Lynch and Noah Dillon
 
-```
+
 _1. Scala Basics: Binding and Scope.  For each of the following uses of names, give the line where_
    _that name is bound.  Briefly explain your reasoning (1-2 sentences)._
 
@@ -17,7 +17,7 @@ _1. Scala Basics: Binding and Scope.  For each of the following uses of names, g
     ii. The use of pi at line 7 is bound at line 1 since this location is where pi is last defined
     within the same scope.
     ```
-```
+
 
 
 
