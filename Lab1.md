@@ -33,7 +33,7 @@ _1. Scala Basics: Binding and Scope.  For each of the following uses of names, g
     
 _2. Scala Basics: Typing. In the following, I have left off the return type of function g.  The body_
    _of g is well-typed if we can come up with a valid return type.  Is the body of g well-typed?_
-   _If so, give the return type of g (see above in **bold font type**) and explain how you determined_
+   _If so, give the return type of g (see below in **bold font type**) and explain how you determined_
    _this type._
 
 
