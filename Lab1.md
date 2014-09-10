@@ -53,7 +53,7 @@ _2. Scala Basics: Typing. In the following, I have left off the return type of f
   depends on consistency. The detailed breakdown of the typing the body expression of function g
   shows the consistent use of typing throughout ensures the validity of the return type we chose
   and therefore results in the well-typed body of function g. Therefore, our answer to the above 
-  question is, "Yes, the body expression of function g is well-typed." 
+  question is, **"Yes, the body expression of function g is well-typed."** 
        
   **g:( (Int, Int), Int ) because**
       
