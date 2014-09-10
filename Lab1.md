@@ -23,14 +23,15 @@ _1. Scala Basics: Binding and Scope.  For each of the following uses of names, g
          on line 3 is within the scope of function f.  
     
     ii.  The use of x at line 6 is bound at line 5 since it can only be used within the scope of case x
-         where on line 5 x is a new "placeholder" variable being defined to set up this particular case.
+         where on line 5 x is a new "placeholder" variable being defined to set up this particular   
+         case.
          
     iii. The use of x at line 10 is also bound at line 5 since it can only be used within the scope of 
-         case x where on line 5 x is a new "placeholder" variable being defined to set up this particular 
-         case.
+         case x where on line 5 x is a new "placeholder" variable being defined to set up this 
+         particular case.
     
-    iv.  The use of x at line 13 is bound at line 1 since it is the only definition of x within the global
-         scope on which the line 13 reference of x depends.
+    iv.  The use of x at line 13 is bound at line 1 since it is the only definition of x within the 
+         global scope on which the line 13 reference of x depends.
     
 _2. Scala Basics: Typing. In the following, I have left off the return type of function g.  The body_
    _of g is well-typed if we can come up with a valid return type.  Is the body of g well-typed?_
@@ -66,7 +67,7 @@ _2. Scala Basics: Typing. In the following, I have left off the return type of f
                     (x, 3): (Int, Int) because 	 
                          x: Int                    // per declaration in parameter field
                a + 2: Int because
-                   a: Int because                  // per definition of a on line 2                
+                   a: Int                          // per definition of a on line 2                
                    2: Int          		
        
 
