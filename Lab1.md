@@ -51,10 +51,8 @@ _2. Scala Basics: Typing. In the following, I have left off the return type of f
   valid.  The validity of the return type and therefore the well-typed status of the function g
   depends on consistency. The detailed breakdown of the typing the body expression of function g
   shows the consistent use of typing throughout ensures the validity of the return type we chose
-  and therefore results in the well-typed body of function g.
-  
-  Therefore, our answer to the above question is, **"Yes, the body expression of function g is** 
-  **well-typed."** 
+  and therefore results in the well-typed body of function g. Therefore, our answer to the above 
+  question is, **"Yes, the body expression of function g is well-typed."** 
        
       i.  (b, 1):( (Int, Int), Int ) because       // if( x == 0)
                b: (Int, Int) because               // per definition of b on line 2
