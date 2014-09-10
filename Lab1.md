@@ -23,13 +23,12 @@ _1. Scala Basics: Binding and Scope.  For each of the following uses of names, g
          is therefore declaring x as an Int within the scope of the function f.  The reference of x 
          on line 3 is within the scope of function f.  
     
-    ii.  The use of x at line 6 is bound at line 5 since it can only be used within the scope of case x
-         where on line 5 x is a new "placeholder" variable being defined to set up this particular   
-         case.
+    ii.  The use of x at line 6 is bound at line 5 since it can only be used within the scope of case
+         x. On line 5, x is a new "placeholder" variable being defined to set up this particular case.
          
     iii. The use of x at line 10 is also bound at line 5 since it can only be used within the scope of 
-         case x where on line 5 x is a new "placeholder" variable being defined to set up this 
-         particular case.
+         case x. On line 5, x is a new "placeholder" variable being defined to set up this particular 
+         case.
     
     iv.  The use of x at line 13 is bound at line 1 since it is the only definition of x within the 
          global scope on which the line 13 reference of x depends.
