@@ -36,18 +36,18 @@ _2. Scala Basics: Typing. In the following, I have left off the return type of f
    _If so, give the return type of g (see above in **bold font type**) and explain how you determined_
    _this type._
    
-   
-     _line 1      def g(x: Int) **tuple:( (Int, Int), Int )** = {_
-     _line 2          val (a, b) = (1, (x, 3))_
-     _line 3          if( x == 0 ) (b, 1) else (b, a + 2)_
-     _line 4      }_
+
+  _line 1      def g(x: Int) **tuple:( (Int, Int), Int )** = {_
+  _line 2          val (a, b) = (1, (x, 3))_
+  _line 3          if( x == 0 ) (b, 1) else (b, a + 2)_
+  _line 4      }_
     
-    _**Explanation for choosing type tuple:( (Int, Int), Int ):**_
-    As mentioned in the problem, the body of a function is well-typed only if the return type is
-    valid.  The validity of the return type and therefore the well-typed status of the function g
-    depends on consistency. The return type we chose is held consistent throughout the function.
-    Therefore, our answer to the above question is, "Yes, the body expression of function g is 
-    well-typed." 
+  _**Explanation for choosing type tuple:( (Int, Int), Int ):**_
+  As mentioned in the problem, the body of a function is well-typed only if the return type is
+  valid.  The validity of the return type and therefore the well-typed status of the function g
+  depends on consistency. The return type we chose is held consistent throughout the function.
+  Therefore, our answer to the above question is, "Yes, the body expression of function g is 
+  well-typed." 
        
       i.  (b, 1):( (Int, Int), Int ) because       // if( x == 0)
                b: (Int, Int) because               // per definition of b on line 2
