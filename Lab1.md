@@ -3,6 +3,7 @@
 ####Team Members: Jessica Lynch and Noah Dillon
 
 
+
 _1. Scala Basics: Binding and Scope.  For each of the following uses of names, give the line where_
    _that name is bound.  Briefly explain your reasoning (1-2 sentences)._
 
