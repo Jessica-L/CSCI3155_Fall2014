@@ -19,7 +19,7 @@ _1. Scala Basics: Binding and Scope.  For each of the following uses of names, g
   _(b) The use of x at line 3 is bound at which line? The use of x at line 6 is bound at which line?_
       _The use of x at line 10 is bound at which line? The use of x at line 13 is bound at which line?_
     
-    i.   The use of x at line 3 is bound at line 2 where it is being passed into the function f()and 
+    i.   The use of x at line 3 is bound at line 2 where it is being passed into the function f() and 
          is in the same scope as the reference of x in line 3.  
     
     ii.  The use of x at line 6 is bound at line 5 since this location was the last place where the 
@@ -37,12 +37,12 @@ _2. Scala Basics: Typing. In the following, I have left off the return type of f
    _this type._
    
    
-     line 1      def g(x: Int) **tuple:( (Int, Int), Int )** = {
-     line 2          val (a, b) = (1, (x, 3))
-     line 3          if( x == 0 ) (b, 1) else (b, a + 2)
-     line 4      }
+     _line 1      def g(x: Int) **tuple:( (Int, Int), Int )** = {_
+     _line 2          val (a, b) = (1, (x, 3))_
+     _line 3          if( x == 0 ) (b, 1) else (b, a + 2)_
+     _line 4      }_
     
-    Explanation for choosing type tuple:( (Int, Int), Int ):
+    _**Explanation for choosing type tuple:( (Int, Int), Int ):**_
     As mentioned in the problem, the body of a function is well-typed only if the return type is
     valid.  The validity of the return type and therefore the well-typed status of the function g
     depends on consistency. The return type we chose is held consistent throughout the function.
@@ -53,8 +53,8 @@ _2. Scala Basics: Typing. In the following, I have left off the return type of f
                b: (Int, Int) because               // per definition of b on line 2
                    (x, 3): (Int, Int) because 	  
                         x: Int                     // per declaration in parameter field
-
                1: Int
+               
       ii. (b, a + 2): ( (Int, Int), Int ) because  // if( x != 0)
                b: (Int, Int) because               // per definition of b on line 2
                     (x, 3): (Int, Int) because 	 
