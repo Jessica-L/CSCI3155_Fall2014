@@ -133,15 +133,16 @@ object Lab1 extends jsy.util.JsyApplication {
   * tree is a valid BST.
   */  
   def repOk(t: SearchTree): Boolean = {
-    // Helper function to check for Node(Empty, d, Empty), Node(1,d,r), 
-    // Node(Empty, d, r), and Node(l, d, Empty) -AND- that 
-    // l->data < d <= r->data
+    // Helper function to check if the data in the current node is
+    // min < d <= max and if so recurses on left and right children.
     def check(t: SearchTree, min: Int, max: Int): Boolean = t match {
-      case Empty => true
+      case Empty => true    // Base case is always true
       case Node(l, d, r) => {
      	if ( (d < max) && (d >= min) )
-     	  (check(l, min, d) && check(r, d, max))
-     	else false
+        // On recursing left updates the max for the child node to d
+        // and on recursing right updates min for right child node to d
+     	  (check(l, min, d) && check(r, d, max)) 
+     	else false    // The node fails the rules of BST
       }
     }
     check(t, Int.MinValue, Int.MaxValue)
@@ -153,11 +154,11 @@ object Lab1 extends jsy.util.JsyApplication {
   * Returns revised tree t after node inserted.
   */   
   def insert(t: SearchTree, n: Int): SearchTree = t match {
-    case Empty => Node(Empty, n, Empty)
+    case Empty => Node(Empty, n, Empty) // Once at a leaf position, insert new node
     case Node(l, d, r) => {
-      if (n < d) Node(insert(l, n), d, r)
-      else Node(l, d, insert(r,n))
-    }
+      if (n < d) Node(insert(l, n), d, r) // Checks inserted value vs current node's
+      else Node(l, d, insert(r,n))        // value and recurse left or right child for
+    }                                     // the appropriate BST rule
   }
 
  /*
@@ -167,12 +168,12 @@ object Lab1 extends jsy.util.JsyApplication {
   * value node removed, and (2) said node's minimum value.
   */     
   def deleteMin(t: SearchTree): (SearchTree, Int) = {
-    require(t != Empty)
+    require(t != Empty)   // Safefard against empty trees
     (t: @unchecked) match {
-      case Node(Empty, d, r) => (r, d)
-      case Node(l, d, r) =>
-        val (l1, m) = deleteMin(l)
-        (Node(l1, d, r), m)
+      case Node(Empty, d, r) => (r, d)  // If left node empty then this is min
+      case Node(l, d, r) => {           // If left value exists recurse on 
+        val (l1, m) = deleteMin(l)    // left node with delete min
+        (Node(l1, d, r), m) }    // On return rebuild parent nodes
     }
   }
 
@@ -183,15 +184,24 @@ object Lab1 extends jsy.util.JsyApplication {
   */ 
   def delete(t: SearchTree, n: Int): SearchTree = {
     t match {
-      case Empty => Empty
-      case Node(l, d, r) => if (n < d) Node(delete(l, n), d, r)
-      else if (n > d) Node(l, d, delete(r, n))
-      else if (l == Empty) r
-      else if (r == Empty) l
-      else {
-         val temp = deleteMin(r)
-         Node(l, temp._2, temp._1)    
-      }
+      case Empty => Empty    // If n does not exist in t return empty
+      case Node(l, d, r) => 
+        // Check n vs current node and if not equal recurse on child
+        // node fallowing BST rules
+        if (n < d) Node(delete(l, n), d, r)  // Rebuild current node on return
+        else if (n > d) Node(l, d, delete(r, n))  // Rebuild node on return
+        // One finding the node to be deleted deal with three cases:
+        //    Node(Empty, d, r): replace current node with right child
+        else if (l == Empty) r
+        //    Node(l, d, Empty): replace current node with left child
+        else if (r == Empty) l
+        //    Node(l, d, r): replace current node with the min node
+        //    of the right child by using deleteMin(r) because the
+        //    returned node will still satisfy BST rules
+        else {
+          val temp = deleteMin(r)
+          Node(l, temp._2, temp._1)  // Rebuild node on return
+        }
     } 
   }
   
