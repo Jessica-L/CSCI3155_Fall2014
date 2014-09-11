@@ -192,7 +192,7 @@ object Lab1 extends jsy.util.JsyApplication {
  /*
   * #5(b)
   * Parameters: t: SearchTree, n: Int
-  * Returns revised tree t revised with the inserted node.
+  * Returns revised tree t after node inserted.
   */   
   def insert(t: SearchTree, n: Int): SearchTree = t match {
     case Empty => Node(Empty, n, Empty)
