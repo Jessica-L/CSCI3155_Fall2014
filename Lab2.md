@@ -3,17 +3,17 @@
 ####Team Members: Jessica Lynch and Noah Dillon
 
 
-_1. Grammars: Synthetic Examples. 
+_1. Grammars: Synthetic Examples._ 
 
-			A ::= A & A | V
-			V ::= a | b
+_			A ::= A & A | V_
+_			V ::= a | b_
 
-   (a) Rewrite the above grammar using the following two judgment forms:
+_	(a) Rewrite the above grammar using the following two judgment forms:_
     
-    A &isin; AObjects
-    V &isin; VObjects_
+_		A &isin; AObjects_
+_		V &isin; VObjects_
     
-**	   SOLUTION:**
+**SOLUTION:**
 		
 		<in progress>
 		
