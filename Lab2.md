@@ -210,8 +210,7 @@ _e ::= operand | e operator operand_
 _e ::= operand esuffix_  
 _esuffix ::= operator operand esuffix | epsilon_   
 
-_(a) Consider the above two grammars for expressions e.  In both grammars, **operator**_
-_and **operand** are the same._
+_(a) Consider the above two grammars for expressions e.  In both grammars, operator and operand are the same._
 	    
 **SOLUTION:**
   
