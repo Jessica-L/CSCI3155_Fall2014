@@ -19,15 +19,32 @@ Axioms:
 
 a &isin; VObjects; b &isin; VObjects
 
+			----------------			----------------
+			a is in VObjects			b is in VObjects
 
 
+Premises and conclusion:
 
-
- 
-		
-
-
-  _(b) Show that the grammar in part (a) is ambiguous:_
+			   S(a) is in AObjects S(b) is in AObjects
+			   ---------------------------------------
+			              V is in AObjects
+			              
+			                     |
+			                     V
+			                      	              
+			             S(V) is in AObjects
+			             -------------------
+			              V&V is in AObjects
+			              
+			                     |
+			                     V
+			                      
+			              V&V is in AObjects
+			           ------------------------
+			           S(V)&S(V) is in AObjects
+			             		
+			             		
+_(b) Show that the grammar in part (a) is ambiguous:_
 
 **SOLUTION:**
     
@@ -271,10 +288,35 @@ _(a) Consider the above two grammars for expressions e.  In both grammars, opera
 											  |
 										   epsilon
 			
+_(b) Write a Scala expression to determine if - has higher precedence than << or vice versa._  
+_Make sure that you are checking for precedence in your expression and not for left or right_  
+_associativity. Use parentheses to indicate the possible abstract syntax trees, and then_  
+_show the evaluation of the possible expressions. Finally, explain how you arrived at the_  
+_relative precedence of and << based on the output that you saw in the Scala interpreter._   
 
-       
+val a
+val b
 
-       
+e ::= term << e | e << term | term
+term ::= a - b
+
+
+
+_(c) Give a BNF grammar for floating point numbers that are made up of a fraction (e.g., 5.6 or 3.123 or -2.5)_  
+_followed by an optional exponent (e.g., E10 or E-10). The exponent, if it exists, is the letter ‘E’_  
+_followed by an integer. For example, the following are floating point numbers: 3.5E3, 3.123E30, -2.5E2,_  
+_-2.5E-2, and 3.5. The following are not examples of floating point numbers: 3.E3, E3, and 3.0E4.5._  
+_More precisely, our floating point numbers must have a decimal point, do not have leading zeros, can_  
+_have any number of trailing zeros, non-zero exponents (if it exists), must have non-zero fraction to_  
+_have an exponent, and cannot have a ‘-’ in front of a zero number. The exponent cannot have leading zeros._    
+
+<e> ::=  <I.efterm> | <Ne> | <N>
+
+<term> ::= <EN> | <&epsilon;>
+
+<N> ::= 0 | 1 | 2 | 3 | ... | 9 
+
+<I> ::= 1 | 2 | 3 | ... | 9  
 
 
 
