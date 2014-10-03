@@ -15,7 +15,16 @@ _V &isin; VObjects_
     
 **SOLUTION:**
 		
-		<in progress>
+Axioms:
+-----------------
+a &isin; VObjects
+
+-----------------
+b &isin; VObjects
+
+
+
+ 
 		
 
 
