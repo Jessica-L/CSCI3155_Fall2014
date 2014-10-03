@@ -314,9 +314,9 @@ _have an exponent, and cannot have a ‘-’ in front of a zero number. The expo
 
 		<term> ::= <EN> | epsilon  
 
-		<N> ::= 0 | 1 | 2 | 3 | ... | 9   
+		<N> ::= -9 | -8 | -7 | ... | 0 | 1 | 2 | 3 | ... | 9   
 
-		<I> ::= 1 | 2 | 3 | ... | 9  
+		<I> ::= -9 | -8 | -7 | -6 | ... -1 | 1 | 2 | 3 | ... | 9  
 
 
 
