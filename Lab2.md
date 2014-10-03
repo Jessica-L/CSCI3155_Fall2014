@@ -294,11 +294,11 @@ _associativity. Use parentheses to indicate the possible abstract syntax trees, 
 _show the evaluation of the possible expressions. Finally, explain how you arrived at the_  
 _relative precedence of and << based on the output that you saw in the Scala interpreter._   
 
-val a
-val b
-
-e ::= term << e | e << term | term
-term ::= a - b
+val a  
+val b  
+  
+e ::= term << e | e << term | term  
+term ::= a - b  
 
 
 
@@ -310,13 +310,13 @@ _More precisely, our floating point numbers must have a decimal point, do not ha
 _have any number of trailing zeros, non-zero exponents (if it exists), must have non-zero fraction to_  
 _have an exponent, and cannot have a ‘-’ in front of a zero number. The exponent cannot have leading zeros._    
 
-<e> ::=  <I.efterm> | <Ne> | <N>
+  <e> ::=  <I.efterm> | <Ne> | <N>
 
-<term> ::= <EN> | <&epsilon;>
+  <term> ::= <EN> | <&epsilon;>
 
-<N> ::= 0 | 1 | 2 | 3 | ... | 9 
+  <N> ::= 0 | 1 | 2 | 3 | ... | 9 
 
-<I> ::= 1 | 2 | 3 | ... | 9  
+  <I> ::= 1 | 2 | 3 | ... | 9  
 
 
 
