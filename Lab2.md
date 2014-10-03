@@ -16,11 +16,10 @@ _V &isin; VObjects_
 **SOLUTION:**
 		
 Axioms:
------------------
-a &isin; VObjects
 
------------------
-b &isin; VObjects
+a &isin; VObjects; b &isin; VObjects
+
+
 
 
 
