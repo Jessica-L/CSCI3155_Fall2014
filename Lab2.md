@@ -3,6 +3,8 @@
 ####Team Members: Jessica Lynch and Noah Dillon
   
   
+  
+-----
 _1. Grammars: Synthetic Examples._ 
 
 _A ::= A & A | V_  
