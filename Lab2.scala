@@ -66,7 +66,6 @@ object Lab2 extends jsy.util.JsyApplication {
     (v: @unchecked) match {
       case B(b) => b
       case N(0) => false
-      //case N(Double.NaN) => false
       case N(n) => if (n.isNaN()) false else true
       case S("") => false
       case S(_) => true
@@ -122,12 +121,10 @@ object Lab2 extends jsy.util.JsyApplication {
         }  
   
         case And => if(toBoolean(eToVal(e1)))
-        				if (toBoolean(eToVal(e2)))
-        				  eToVal(e2) else eToVal(e2)
-        			else eToVal(e1)
+                        eToVal(e2) else eToVal(e1)
         				   
         case Or => if(toBoolean(e1))
-        				eToVal(e1) else eToVal(e2)
+                        eToVal(e1) else eToVal(e2)
   
         case Seq => eToVal(e1);eToVal(e2)
         
