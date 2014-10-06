@@ -92,9 +92,12 @@ object Lab2 extends jsy.util.JsyApplication {
     e match {
       /* Base Cases */
       case Binary(bop, e1, e2) => bop match {
+      	
         case Plus => (eToVal(e1), eToVal(e2)) match{
+          /* Convert num or bool to string and then concatenate. */
           case (S(_), _) => S(toStr(eToVal(e1))+toStr(eToVal(e2)))
           case (_, S(_)) => S(toStr(eToVal(e1))+toStr(eToVal(e2)))
+
           case (_, _) => N(toNumber(eToVal(e1))+toNumber(eToVal(e2)))
         } 
         
@@ -104,28 +107,36 @@ object Lab2 extends jsy.util.JsyApplication {
         case Eq => B(eToVal(e1) == eToVal(e2))
         case Ne => B(eToVal(e1) != eToVal(e2))
         case Lt => (eToVal(e1), eToVal(e2)) match{
-          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) < toStr(eToVal(e2)))
+          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) < toStr(eToVal(e2))) /* String compare */
           case (_, _) =>  B(toNumber(eToVal(e1)) < toNumber(eToVal(e2)))
         }  
         case Le => (eToVal(e1), eToVal(e2)) match{
-          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) <= toStr(eToVal(e2)))
+          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) <= toStr(eToVal(e2))) /* String compare */
           case (_, _) =>  B(toNumber(eToVal(e1)) <= toNumber(eToVal(e2)))
         }  
         case Gt => (eToVal(e1), eToVal(e2)) match{
-          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) > toStr(eToVal(e2)))
+          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) > toStr(eToVal(e2))) /* String compare */
           case (_, _) =>  B(toNumber(eToVal(e1)) > toNumber(eToVal(e2)))
         }  
         case Ge => (eToVal(e1), eToVal(e2)) match{
-          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) >= toStr(eToVal(e2)))
+          case (S(_), S(_)) =>  B(toStr(eToVal(e1)) >= toStr(eToVal(e2))) /* String compare */
           case (_, _) =>  B(toNumber(eToVal(e1)) >= toNumber(eToVal(e2)))
         }  
-  
+        
+        /* 
+         * Performs logical && using truth table logic.
+         * If e1 true return e2; if e1 false return e1. 
+         */
         case And => if(toBoolean(eToVal(e1)))
                         eToVal(e2) else eToVal(e1)
-        				   
+        /* 
+         * Performs logical || using truth table logic.
+         * If e1 true return e1; if e1 false return e2. 
+         */        				   
         case Or => if(toBoolean(e1))
                         eToVal(e1) else eToVal(e2)
   
+        /* Return e2 (last element in sequence). */
         case Seq => eToVal(e1);eToVal(e2)
         
         case _ => throw new UnsupportedOperationException
@@ -134,14 +145,17 @@ object Lab2 extends jsy.util.JsyApplication {
         case Neg => N(-toNumber(eToVal(e1)))
         case Not => B(!toBoolean(eToVal(e1)))
         case _ =>  throw new UnsupportedOperationException
-      } 
+        } 
       
+      /* If e1 is true evaluate 32 else evaluate e3. */
       case If(e1, e2, e3) => {	if(toBoolean(eToVal(e1)))
                                     eToVal(e2) else eToVal(e3)
                              }
       
+      /* Assign e1's value to x and evaluate e2 based on x if applicable. */
       case ConstDecl(x, e1, e2) => eval(extend(env,x,eToVal(e1)), e2)
       
+      /* Handle var if present in e2. */
       case Var(x) => get(env, x)
     	  
       /* Inductive Cases */
