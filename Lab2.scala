@@ -137,8 +137,8 @@ object Lab2 extends jsy.util.JsyApplication {
       } 
       
       case If(e1, e2, e3) => {	if(toBoolean(eToVal(e1)))
-    	  							eToVal(e2) else eToVal(e3)
-      						 }
+                                    eToVal(e2) else eToVal(e3)
+                             }
       
       case ConstDecl(x, e1, e2) => eval(extend(env,x,eToVal(e1)), e2)
       
